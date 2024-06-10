@@ -1,170 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reach out</title>
+    <title>Reach Out</title>
     <link rel="icon" href="elifts.jpg" type="image/jpg">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden; /* Prevent scrolling */
-            background-color: rgb(10, 10, 10);
-            position: relative; /* Ensure stars and button are positioned correctly */
-        }
-
-        .centered-link {
-            text-decoration: none; /* Remove underline */
-        }
-
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px; /* Space between buttons */
-            z-index: 10; /* Ensure buttons are above stars */
-            position: relative; /* Ensure buttons are positioned above stars */
-        }
-
-        .centered-button, .centered-button2, .centered-button3 {
-            min-width: 210px;
-            color: #000000;
-            width: 218px;
-            height: 60px;
-            border-radius: 12px;
-            font-size: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            unicode-bidi: isolate;
-            font-weight: bold;
-            border: none;
-            padding: 0 24px;
-            line-height: 27px;
-            text-decoration: none !important;
-            font-family: 'Poppins', sans-serif !important;
-            -webkit-box-sizing: border-box !important;
-            box-sizing: border-box !important;
-        }
-
-        .centered-button {
-            background-color: #00b7ff !important;
-        }
-
-        .centered-button2 {
-            background-color: #66ff00 !important;
-        }
-
-        .centered-button3 {
-            background-color: #ff0000 !important;
-        }
-
-        .centered-button img, .centered-button2 img, .centered-button3 img {
-            margin-right: 10px; /* Space between image and text */
-            width: 30px;
-            height: 30px;
-        }
-
-        .centered-button:hover, .centered-button2:hover, .centered-button3:hover {
-            background-color: #0056b3;
-            cursor: pointer;
-        }
-
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 1; /* Ensure stars are below buttons */
-        }
-
-        .star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 2s infinite ease-in-out;
-        }
-
-        @keyframes twinkle {
-            0%, 100% {
-                opacity: 0.5;
-            }
-            50% {
-                opacity: 1;
-            }
-        }
-
-        .back-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            z-index: 10;
-            text-decoration: none; /* Remove underline */
-        }
-
-        .bmc-btn-container {
-            z-index: 15; /* Ensure Buy Me a Coffee button is above stars */
-            position: relative;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <div class="stars"></div>
-    <p style="font-size: 80px; font-weight: bold; color: white; font-family: 'Poppins', sans-serif;">reach out</p>
-    <a href="https://elifts.github.io/elift/" class="back-button">
+    <h1>Reach Out</h1>
+    <a href="index.html" class="back-button">
         <button class="centered-button">
-            <img src="https://static.vecteezy.com/system/resources/previews/014/455/839/non_2x/arrow-to-the-left-icon-sign-free-png.png" alt="arrow">
-            back
+            <img src="https://static.vecteezy.com/system/resources/previews/014/455/839/non_2x/arrow-to-the-left-icon-sign-free-png.png" alt="Back arrow">
+            Back
         </button>
     </a>
     <div class="button-container">
-        <a target="_blank" class="centered-link">
-            <button class="centered-button" onclick="copyToClipboard()">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" alt="email">
-                my email
-            </button>
-        </a>
-
+        <button class="centered-button" onclick="copyToClipboard()">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" alt="Email Logo">
+            My Email
+        </button>
         <a href="https://discord.gg/tCpZjcEaDa" target="_blank" class="centered-link">
             <button class="centered-button2">
-                <img src="https://static.vecteezy.com/system/resources/thumbnails/023/986/612/small/discord-logo-discord-logo-transparent-discord-icon-transparent-free-free-png.png" alt="discord-logo">
-                discord
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/023/986/612/small/discord-logo-discord-logo-transparent-discord-icon-transparent-free-free-png.png" alt="Discord Logo">
+                Discord
             </button>
         </a>
-
-
     </div>
-
+    <script src="stars.js"></script>
     <script>
-        // JavaScript to create stationary stars
-        const starsContainer = document.querySelector('.stars');
-        const numStars = 100;
-
-        for (let i = 0; i < numStars; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.top = `${Math.random() * 100}vh`;
-            star.style.left = `${Math.random() * 100}vw`;
-            star.style.animationDelay = `${Math.random() * 2}s`; // Random delay for each star
-            starsContainer.appendChild(star);
-        }
-
         function copyToClipboard() {
             navigator.clipboard.writeText("elifts404@gmail.com")
-            alert("my email was copyed to your clipbourd")
+            alert("My email was copied to your clipboard");
         }
     </script>
 </body>
-
 </html>
