@@ -136,9 +136,10 @@
             </button>
         </a>
         <a href="https://elifts.github.io/elift/reach_out" target="_blank" class="centered-link">
-            <button class="centered-button3">
+            <button class="centered-button3" onclick="changeLink()">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" alt="supporters Logo">
                 reach out
+           
             </button>
         </a>
     </div>
@@ -155,6 +156,15 @@
             star.style.left = `${Math.random() * 100}vw`;
             star.style.animationDelay = `${Math.random() * 2}s`; // Random delay for each star
             starsContainer.appendChild(star);
+        }
+
+        function changeLink() {
+            // Change the href attribute of the button
+            const button = document.querySelector('.centered-button3');
+            button.parentElement.href = 'https://new-link.com';
+            // Alternatively, you can change the entire anchor tag by selecting it directly:
+            // const anchor = document.querySelector('a.centered-link[href="https://elifts.github.io/elift/reach_out"]');
+            // anchor.href = 'https://new-link.com';
         }
     </script>
 
