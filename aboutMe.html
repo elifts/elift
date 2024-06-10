@@ -1,32 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <link rel="icon" href="elifts.jpg" type="image/jpg">
-    <link rel="stylesheet" href="styles.css">
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Prevent scrolling */
+            background-color: rgb(10, 10, 10);
+            position: relative; /* Ensure stars and button are positioned correctly */
+            color: white;
+            font-family: 'Poppins', sans-serif !important;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .centered-button {
+            min-width: 210px;
+            color: #000000;
+            background-color: #00b7ff !important;
+            width: 218px;
+            height: 60px;
+            border-radius: 12px;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            unicode-bidi: isolate;
+            font-weight: bold;
+            border: none;
+            padding: 0 24px;
+            line-height: 27px;
+            text-decoration: none !important;
+            font-family: 'Poppins', sans-serif !important;
+            -webkit-box-sizing: border-box !important;
+            box-sizing: border-box !important;
+        }
+
+        .centered-button img {
+            margin-right: 10px; /* Space between image and text */
+            width: 30px;
+            height: 30px;
+        }
+
+        .centered-button:hover {
+            background-color: #0056b3;
+            cursor: pointer;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 1; /* Ensure stars are below buttons */
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            z-index: 10;
+        }
+
         p {
             max-width: 600px;
             margin: 0;
             font-weight: bold;
         }
+
+        
     </style>
 </head>
+
 <body>
     <div class="stars"></div>
-    <div class="twinkling"></div>
-    <h1>About Me</h1>
-    <div class="content">
-        <p>Hi, I'm a 3D artist who loves creating daily animations. Currently, I'm juggling school and working on a video game. Although I don't have a job yet, your support means the world to me. Every donation goes directly towards improving my channel and speeding up the game development process, allowing me to create even better animations.</p>
-    </div>
-    <a href="index.html" class="back-button">
+    <p style="font-size: 80px; font-weight: bold; color: white; font-family: 'Poppins', sans-serif;">about me</p>
+    <a href="https://elifts.github.io/elift/"  class="back-button">
         <button class="centered-button">
-            <img src="https://static.vecteezy.com/system/resources/previews/014/455/839/non_2x/arrow-to-the-left-icon-sign-free-png.png" alt="Back arrow">
-            Back
+            <img src="https://static.vecteezy.com/system/resources/previews/014/455/839/non_2x/arrow-to-the-left-icon-sign-free-png.png" alt="arrow">
+            back
         </button>
     </a>
-    <script src="stars.js"></script>
+
+    <div class="content">
+        <p>Hi,  I'm a 3D artist who loves creating daily animations. Currently, I'm juggling school and working on a video game. Although I don't have a job yet, your support means the world to me. Every donation goes directly towards improving my channel and speeding up the game development process, allowing me to create even better animations.</p>
+    </div>
+
+    <script>
+        // JavaScript to create stationary stars
+        const starsContainer = document.querySelector('.stars');
+        const numStars = 100;
+
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.animationDelay = `${Math.random() * 2}s`; // Random delay for each star
+            starsContainer.appendChild(star);
+        }
+    </script>
 </body>
+
 </html>

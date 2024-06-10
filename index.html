@@ -1,41 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="elifts.jpg" type="image/jpg">
-    <title>Elifts</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <title>elifts</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background-color: rgb(10, 10, 10);
+            position: relative;
+        }
+
+        .centered-link {
+            text-decoration: none;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            z-index: 10;
+            position: relative;
+            padding: 20px;
+        }
+
+        .centered-button,
+        .centered-button2,
+        .centered-button3,
+        .centered-button4 {
+            color: #000000;
+            width: 218px;
+            height: 60px;
+            border-radius: 12px;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: none;
+            padding: 0 24px;
+            line-height: 27px;
+            text-decoration: none !important;
+            font-family: 'Poppins', sans-serif !important;
+            box-sizing: border-box !important;
+            transition: background-color 0.3s ease;
+        }
+
+        .centered-button {
+            background-color: #00b7ff;
+        }
+
+        .centered-button2 {
+            background-color: #66ff00;
+        }
+
+        .centered-button3 {
+            background-color: #ff0000;
+        }
+
+        .centered-button4 {
+            background-color: #9900ff;
+        }
+
+        .centered-button img,
+        .centered-button2 img,
+        .centered-button3 img,
+        .centered-button4 img {
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+        }
+
+        .centered-button:hover,
+        .centered-button2:hover,
+        .centered-button3:hover,
+        .centered-button4:hover {
+            filter: brightness(0.8);
+            cursor: pointer;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .bmc-btn-container {
+            z-index: 15;
+            position: relative;
+        }
+    </style>
 </head>
+
 <body>
     <div class="stars"></div>
-    <div class="twinkling"></div>
-    <h1>HELLO =]</h1>
-    <a href="https://www.youtube.com/@elifts_on_a_bad_day?sub_confirmation=1" target="_blank" class="centered-link">
-        <button class="centered-button">
-            <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube Logo">
-            YouTube
-        </button>
-    </a>
-    <a href="supporters.html" class="centered-link">
-        <button class="centered-button2">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_corazón.svg/640px-Heart_corazón.svg.png" alt="Supporters Logo">
-            Supporters
-        </button>
-    </a>
-    <a href="about.html" class="centered-link">
-        <button class="centered-button3">
-            <img src="https://i.pinimg.com/originals/36/af/ff/36afff72dc62fb3f7f304d303c90ff8c.png" alt="About Me">
-            About Me
-        </button>
-    </a>
-    <a href="reachout.html" class="centered-link">
-        <button class="centered-button4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" alt="Gmail Logo">
-            Reach Out
-        </button>
-    </a>
-    <script src="stars.js"></script>
-    <script id="bmc-button" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="elifts" data-color="#FFDD00" data-emoji="" data-font="Poppins" data-text="Support Me" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+    <p style="font-size: 80px; font-weight: bold; color: white; font-family: 'Poppins', sans-serif;">HELLO =]</p>
+    <div class="button-container">
+        <a href="https://www.youtube.com/@elifts_on_a_bad_day?sub_confirmation=1" target="_blank" class="centered-link">
+            <button class="centered-button">
+                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube Logo">
+                youtube
+            </button>
+        </a>
+
+        <a href="https://elifts.github.io/elift/supporters" class="centered-link">
+            <button class="centered-button2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_corazón.svg/640px-Heart_corazón.svg.png" alt="supporters Logo">
+                supporters
+            </button>
+        </a>
+
+        <a href="https://elifts.github.io/elift/aboutMe" class="centered-link">
+            <button class="centered-button3">
+                <img src="https://i.pinimg.com/originals/36/af/ff/36afff72dc62fb3f7f304d303c90ff8c.png" alt="sm
+                ile">
+                about me
+            </button>
+        </a>
+
+        <a href="https://elifts.github.io/elift/reach_out" class="centered-link">
+            <button class="centered-button4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" alt="Gmail Logo">
+                reach out
+            </button>
+        </a>
+    </div>
+
+    <script>
+        // JavaScript to create stationary stars
+        const starsContainer = document.querySelector('.stars');
+        const numStars = 100;
+
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            starsContainer.appendChild(star);
+        }
+    </script>
+
+    <script type="text/javascript" id="bmc-button" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="elifts" data-color="#FFDD00" data-emoji="" data-font="Poppins" data-text="Support Me" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
 </body>
+
 </html>
