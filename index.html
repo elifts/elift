@@ -13,27 +13,29 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            overflow: hidden; /* Prevent scrolling */
+            overflow: hidden;
             background-color: rgb(10, 10, 10);
-            position: relative; /* Ensure stars and button are positioned correctly */
+            position: relative;
         }
 
         .centered-link {
-            text-decoration: none; /* Remove underline */
+            text-decoration: none;
         }
 
         .button-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px; /* Space between buttons */
-            z-index: 10; /* Ensure buttons are above stars */
-            position: relative; /* Ensure buttons are positioned above stars */
+            gap: 20px;
+            z-index: 10;
+            position: relative;
             padding: 20px;
         }
 
-        .centered-button, .centered-button2, .centered-button3, .centered-button4 {
-            min-width: 210px;
+        .centered-button,
+        .centered-button2,
+        .centered-button3,
+        .centered-button4 {
             color: #000000;
             width: 218px;
             height: 60px;
@@ -42,41 +44,46 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            unicode-bidi: isolate;
             font-weight: bold;
             border: none;
             padding: 0 24px;
             line-height: 27px;
             text-decoration: none !important;
             font-family: 'Poppins', sans-serif !important;
-            -webkit-box-sizing: border-box !important;
             box-sizing: border-box !important;
+            transition: background-color 0.3s ease;
         }
 
         .centered-button {
-            background-color: #00b7ff !important;
+            background-color: #00b7ff;
         }
 
         .centered-button2 {
-            background-color: #66ff00 !important;
+            background-color: #66ff00;
         }
 
         .centered-button3 {
-            background-color: #ff0000 !important;
-        }
-        
-        .centered-button4 {
-            background-color: #9900ff !important;
+            background-color: #ff0000;
         }
 
-        .centered-button img, .centered-button2 img, .centered-button3, .centered-button4 img {
-            margin-right: 10px; /* Space between image and text */
+        .centered-button4 {
+            background-color: #9900ff;
+        }
+
+        .centered-button img,
+        .centered-button2 img,
+        .centered-button3 img,
+        .centered-button4 img {
+            margin-right: 10px;
             width: 30px;
             height: 30px;
         }
 
-        .centered-button:hover, .centered-button2:hover, .centered-button3:hover, .centered-button4:hover {
-            background-color: #0056b3;
+        .centered-button:hover,
+        .centered-button2:hover,
+        .centered-button3:hover,
+        .centered-button4:hover {
+            filter: brightness(0.8);
             cursor: pointer;
         }
 
@@ -87,7 +94,7 @@
             top: 0;
             left: 0;
             overflow: hidden;
-            z-index: 1; /* Ensure stars are below buttons */
+            z-index: 1;
         }
 
         .star {
@@ -100,16 +107,18 @@
         }
 
         @keyframes twinkle {
-            0%, 100% {
+            0%,
+            100% {
                 opacity: 0.5;
             }
+
             50% {
                 opacity: 1;
             }
         }
 
         .bmc-btn-container {
-            z-index: 15; /* Ensure Buy Me a Coffee button is above stars */
+            z-index: 15;
             position: relative;
         }
     </style>
@@ -126,22 +135,24 @@
             </button>
         </a>
 
-        <a href="https://elifts.github.io/elift/supporters"  class="centered-link">
+        <a href="https://elifts.github.io/elift/supporters" class="centered-link">
             <button class="centered-button2">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_corazón.svg/640px-Heart_corazón.svg.png" alt="supporters Logo">
                 supporters
             </button>
         </a>
 
-        <a href="https://elifts.github.io/elift/aboutMe"  class="centered-link">
+        <a href="https://elifts.github.io/elift/aboutMe" class="centered-link">
             <button class="centered-button3">
-                <img src="https://i.pinimg.com/originals/36/af/ff/36afff72dc62fb3f7f304d303c90ff8c.png" alt="smile">
+                <img src="https://i.pinimg.com/originals/36/af/ff/36afff72dc62fb3f7f304d303c90ff8c.png" alt="sm
+                ile">
                 about me
             </button>
         </a>
-        <a href="https://elifts.github.io/elift/reach_out"  class="centered-link">
+
+        <a href="https://elifts.github.io/elift/reach_out" class="centered-link">
             <button class="centered-button4">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" alt="supporters Logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" alt="Gmail Logo">
                 reach out
             </button>
         </a>
@@ -157,7 +168,7 @@
             star.className = 'star';
             star.style.top = `${Math.random() * 100}vh`;
             star.style.left = `${Math.random() * 100}vw`;
-            star.style.animationDelay = `${Math.random() * 2}s`; // Random delay for each star
+            star.style.animationDelay = `${Math.random() * 2}s`;
             starsContainer.appendChild(star);
         }
     </script>
